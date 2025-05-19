@@ -1,0 +1,36 @@
+{% assign var = 15 %}
+
+{% if var > 10 %}
+    <p>Greater than 10</p>
+    <p>Another another</p>
+
+    {% assign nested_variable = 5 %}
+    {{ nested_variable }}
+{% else %}
+    <p>Smaller than 10</p>
+{% endif %}
+
+{% for tag in product.tags %}
+    <span>{{ tag }}</span>
+{% endfor %}
+<br>
+
+{% if product.title contains "Roller" %}
+    <p>This is a skating product</p>
+{% endif %}
+<br>
+{% if product.tags contains "shoes" %}
+    <p>This is also footwear</p>
+{% endif %}
+
+{% unless product.tags contains "scarf" %}
+    <p>This is not a  scarf</p>
+{% else %}
+    <p>This is a scarf</p>
+{% endunless %}
+
+{% unless var  <= 10 %}
+    <p>Var is greater than 10</p>
+{% else %}
+    <p>var is smaller than 10</p>
+{% endunless %}
